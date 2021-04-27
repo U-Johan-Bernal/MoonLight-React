@@ -1,24 +1,65 @@
-import logo from './logo.svg';
+//Librerias
+import { BrowserRouter as Router, Route} from 'react-router-dom'
+
+// Componentes
+import Encabezado from './componentes/Encabezado';
+import Navegacion from './componentes/Navegacion';
+import Informacion from './componentes/Informacion';
+import Productos from './componentes/Productos';
+import Contactanos from './componentes/Contactenos';
+import Redes from './componentes/Redes_sociales';
+import Footer from './componentes/Footer';
+import Boton from './componentes/Boton';
+import Encuesta from './componentes/Formulario_Contacto';
+
+// Estilos
 import './App.css';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div>
+      <Router>
+
+        {/* Página Home */}
+
+        <Route exact path="/" render={()=>{
+            return<div className="container">
+              <Boton />
+              <Encabezado />
+              <Navegacion />
+              <hr></hr>
+              <Informacion />
+              <Productos />
+              <Contactanos />
+              <Redes/>
+              <Footer />
+            </div>
+        }}></Route>
+
+        {/* Página Contacto */}
+
+        <Route path="/contacto" render={()=>{
+          return<div className="container">
+          <Boton />
+          <Encabezado />
+          <Navegacion />
+          <hr></hr>
+          <form/>
+          <Encuesta />
+          <Footer/>
+        </div>
+        
+        }}></Route>
+
+        {/* Página Iniciar Sesión */}
+
+
+      </Router>
+      
+      
+     </div>
+    
   );
 }
 
