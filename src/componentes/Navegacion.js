@@ -4,11 +4,21 @@ import logo_nav from '../imagenes/logo_nav.jpg';
 
 // class component
 class Navegacion extends React.Component {
+
+    state={
+        isSwitchOn: false,
+      }
+    
   render() {
+
+    const isOn=this.state.isSwitchOn;
+
     return (
+        
             <nav className="navegacion">
+                
                 <img src={logo_nav} alt="Logo" className="navegacion-logo"></img>
-                <ul className="navegacion-menu">
+                <ul className={ isOn ? "navegacion-menu" : "navegacion-menu.show" }>
                 <li>
                     <a href="/">Iniciar Sesión</a>
                 </li>
@@ -32,6 +42,11 @@ class Navegacion extends React.Component {
                     </a>
                 </li>
             </ul>
+            <div className="menu-btn" >
+                <i className="fas fa-bars"
+                    onClick={()=>this.setState({isSwitchOn: !isOn})}
+                    ></i>
+            </div>
             </nav>
     );
   }

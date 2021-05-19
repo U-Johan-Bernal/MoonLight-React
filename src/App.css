@@ -395,7 +395,9 @@ font-size: 3rem;}
 
   .menu-btn{
     display: block;
+    padding-top: 65px;
   }
+
   .navegacion ul.navegacion-menu{
     display: block;
     position: absolute;
@@ -430,6 +432,15 @@ font-size: 3rem;}
    width: 80%;
  }
 
+ .contact_form{
+   width: 350px;
+ }
+
+ .formulario input,.formulario button,
+ .formulario textarea, .formulario label{
+    width: 280px;
+ }
+
 
 }
 
@@ -457,4 +468,13 @@ font-size: 3rem;}
   
   }
 
+}
+
+/* ---------------------------------------------------------------------------- */
+/*                              Pagina No                                       */
+/* ---------------------------------------------------------------------------- */
+
+.Pagina_No{
+  text-align: center;
+  padding-top: 30px;
 }
